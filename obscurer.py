@@ -482,7 +482,7 @@ def userdb(cowrie_install_dir):
 
 
 def fs_pickle(cowrie_install_dir):
-    launch = "python {0}/bin/fsctl {1}/src/data/fs.pickle".format(cowrie_install_dir, cowrie_install_dir)
+    launch = "python3 {0}/bin/fsctl {1}/src/data/fs.pickle".format(cowrie_install_dir, cowrie_install_dir)
     p = pexpect.spawn(launch)
     p.expect(".*.\r\n\r\nfs.pickle:.*")
     p.sendline("rm -r /home/richard")
@@ -548,7 +548,7 @@ Internal IP: {6}
 """.format(users, password, hostname, version, sshversion, "22", ip_address)
 
 if __name__ == "__main__":
-    parser = OptionParser(usage='usage: python %prog cowrie/install/dir [options]')
+    parser = OptionParser(usage='usage: python3 %prog cowrie/install/dir [options]')
     parser.add_option("-a", "--allthethings", action='store_true', default='False', help="Change all the things")
     (options, args) = parser.parse_args()
 
