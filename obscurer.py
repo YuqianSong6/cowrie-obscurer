@@ -482,7 +482,7 @@ def userdb(cowrie_install_dir):
 
 
 def fs_pickle(cowrie_install_dir):
-    launch = "python3 {0}/bin/fsctl {1}/src/data/fs.pickle".format(cowrie_install_dir, cowrie_install_dir)
+    launch = "python3 {0}/bin/fsctl {1}/src/cowrie/data/fs.pickle".format(cowrie_install_dir, cowrie_install_dir)
     p = pexpect.spawn(launch)
     p.expect(".*.\r\n\r\nfs.pickle:.*")
     p.sendline("rm -r /home/richard")
